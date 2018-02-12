@@ -19,9 +19,9 @@ import project.ta.elearning.dao.UserDao;
 public class UserDaoImpl extends HibernateUtil implements UserDao {
 
     @Override
-    public List<Object[]> loginAction(String username,String password) {
+    public List<Object[]> loginAction(String username,String jenis) {
         List<Object> listResult = new ArrayList<>();
-        String sql = "select * from user_tbl where username = "+username+" and password = "+password+" ; ";
+        String sql = "select * from user_tbl where username = '"+username+"' and password = '"+jenis+"' ; ";
         Query query = createNativeQuery(sql);
         return query.list();
     }

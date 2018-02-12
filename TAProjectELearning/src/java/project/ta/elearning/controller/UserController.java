@@ -6,6 +6,7 @@
 package project.ta.elearning.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,6 +30,13 @@ public class UserController {
         List<UserDto> listUser = userService.getUser();
         modelMap.addAttribute("listUser",listUser);
         return "UserView/view_user";
+    }
+    
+    @RequestMapping(value = "/login" , method =  RequestMethod.GET)
+    public String viewLogin(HttpSession session,ModelMap modelMap,UserDto  userDto ){
+            modelMap.addAttribute("loginDto", userDto);
+            return "login";
+     
     }
     
     

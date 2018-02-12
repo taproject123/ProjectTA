@@ -12,6 +12,7 @@
         <property name="nama"/>
         <property name="username"/>
         <property name="password"/>
+        <property name="jenis"/>
     </class>
   
 

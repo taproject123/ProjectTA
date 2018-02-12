@@ -13,6 +13,6 @@ import java.util.List;
  */
 
 public interface UserDao {
-    public List<Object[]> loginAction(String username,String password); 
+    public List<Object[]> loginAction(String username,String jenis); 
     public List<Object[]> getUser();
 }

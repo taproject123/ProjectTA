@@ -14,6 +14,15 @@ public class UserDto {
     private String nama;
     private String username;
     private String password;
+    private String jenis;
+
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
 
     public Integer getId() {
         return id;

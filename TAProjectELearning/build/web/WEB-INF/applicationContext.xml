@@ -29,9 +29,21 @@
     <bean id = "sessionFactory" class = "org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
         <property name="mappingResources">  
-            <list>                                
-<!--                <value>rumahsakit/model/pasienModel.hbm.xml</value>-->
+            <list>
+                <value>project/ta/elearning/model/Tb_userModel.hbm.xml</value>
                 <value>project/ta/elearning/model/UserModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_courseModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_roleModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_assignmentModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_lessonModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_quizModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_freeQuizModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_levelModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_weklyQuizModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_jurusanModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_nilaiModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_materiSyaratModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_fileModel.hbm.xml</value>
             </list>  
         </property>  
         <property name="hibernateProperties">  

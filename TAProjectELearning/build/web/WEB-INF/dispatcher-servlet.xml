@@ -17,6 +17,9 @@
         http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">   
         
         <context:component-scan base-package="project.ta.elearning.controller"/>
+        
+        <mvc:annotation-driven />
+        <mvc:resources mapping="/resources/**" location="/resources/"/>
     
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"

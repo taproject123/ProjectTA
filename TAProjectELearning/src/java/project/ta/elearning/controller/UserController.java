@@ -31,13 +31,4 @@ public class UserController {
         modelMap.addAttribute("listUser",listUser);
         return "UserView/view_user";
     }
-    
-    @RequestMapping(value = "/login" , method =  RequestMethod.GET)
-    public String viewLogin(HttpSession session,ModelMap modelMap,UserDto  userDto ){
-            modelMap.addAttribute("loginDto", userDto);
-            return "login";
-     
-    }
-    
-    
 }

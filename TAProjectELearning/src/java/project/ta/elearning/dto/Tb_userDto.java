@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project.ta.elearning.model;
+package project.ta.elearning.dto;
 
 /**
  *
  * @author Sou
  */
-public class Tb_userModel {
+public class Tb_userDto {
     private Integer id ;
     private String username;
     private String password;
@@ -40,14 +40,6 @@ public class Tb_userModel {
     private String middlename;
     private String alternatename;
     private Integer id_role;
-
-    public Integer getId_role() {
-        return id_role;
-    }
-
-    public void setId_role(Integer id_role) {
-        this.id_role = id_role;
-    }
 
     public Integer getId() {
         return id;
@@ -280,5 +272,14 @@ public class Tb_userModel {
     public void setAlternatename(String alternatename) {
         this.alternatename = alternatename;
     }
+
+    public Integer getId_role() {
+        return id_role;
+    }
+
+    public void setId_role(Integer id_role) {
+        this.id_role = id_role;
+    }
     
+
 }

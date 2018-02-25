@@ -21,7 +21,7 @@
         <title>Form Login</title>
     </head>
     <body>
-        <form:form modelAttribute="loginDto" name="formLogin" action="loginAction.htm" method="GET">
+        <form:form modelAttribute="loginDto" name="formLogin" action="loginAction.htm" method="POST">
             <div class="navbar navbar-fixed-top">
                 <div class="navbar-inner">
                     <div class="container">
@@ -30,11 +30,11 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="index.html">Good Learner</a>
+                        <a class="brand" href="index.htm">Good Learner</a>
                         <div class="nav-collapse">
                             <ul class="nav pull-right">
                                 <li class="">						
-                                    <a href="signup.html" class="">Tidak mempunyai akun?</a>
+                                    <a href="signup.htm" class="">Tidak mempunyai akun?</a>
                                 </li>
                                 <li class="">						
                                     <a href="index.html" class="">

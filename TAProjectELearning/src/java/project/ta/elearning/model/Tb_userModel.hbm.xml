@@ -37,6 +37,7 @@
         <property name="firstnamephonetic" length="255"/>
         <property name="middlename" length="255"/>
         <property name="alternatename" length="255"/>
+        <property name="id_role" type="integer" length="10"/>
     </class>
   
 

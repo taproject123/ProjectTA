@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : Feb 24, 2018, 11:44:49 AM
-    Author     : IT
+    Document   : index.jsp
+    Created on : Feb 24, 2018, 10:56:22 AM
+    Author     : Sou
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Halaman Dosen</title>
     </head>
     <body>
-        <h1>Hello ${username} dan ${password} dan ${role}</h1>
+        <h1>Hello ${username} Passsword anda ${password} anda sebagai ${role} (Dosen)</h1>
         <p><a href="logout.htm">Log Out</a></p>
     </body>
 </html>

@@ -39,6 +39,15 @@ public class Tb_userModel {
     private String firstnamephonetic;
     private String middlename;
     private String alternatename;
+    private Integer id_role;
+
+    public Integer getId_role() {
+        return id_role;
+    }
+
+    public void setId_role(Integer id_role) {
+        this.id_role = id_role;
+    }
 
     public Integer getId() {
         return id;

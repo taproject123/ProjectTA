@@ -5,6 +5,7 @@
  */
 package project.ta.elearning.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import project.ta.elearning.dao.Tb_userDao;
@@ -33,6 +34,38 @@ public class Tb_userDaoImpl extends HibernateUtil implements Tb_userDao{
         q = createQuery(sql).setParameter("uname", username).setParameter("pwd", password);
         listUser = q.list();
         return listUser;
+    }
+
+    @Override
+    public List<Tb_userModel> getData() {
+        List<Tb_userModel> listData = new ArrayList<>();
+        String sql = "select model from Tb_userModel model";
+        Query query = createQuery(sql);
+        listData = query.list();
+        return listData;
+    }
+
+    @Override
+    public void deleteData(Integer id) {
+        try {
+            getSession().delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateData(Tb_userModel model) {
+        getSession().update(model);
+    }
+
+    @Override
+    public List<Tb_userModel> getDataById(Integer id) {
+        List<Tb_userModel> listData = new ArrayList<>();
+        String sql = "select model from Tb_userModel model where id = :id";
+        Query query = createQuery(sql).setParameter("id", id);
+        listData = query.list();
+        return listData;
     }
     
 }

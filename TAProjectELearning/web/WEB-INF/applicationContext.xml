@@ -72,4 +72,7 @@
     <bean id="tb_userDao" class="project.ta.elearning.dao.impl.Tb_userDaoImpl"/>
     <bean id="tb_userService" class="project.ta.elearning.service.impl.Tb_userServiceImpl"/>
     
+    <bean id="tb_roleDao" class="project.ta.elearning.dao.impl.Tb_roleDaoImpl"/>
+    <bean id="tb_roleService" class="project.ta.elearning.service.impl.Tb_roleServiceImpl"/>
+    
 </beans>

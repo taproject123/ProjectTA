@@ -25,10 +25,10 @@ public class UserController {
     @Autowired
     UserService  userService;
     
-    @RequestMapping(value = "/view_user" , method =  RequestMethod.GET)
-    public String viewUser(UserDto userDto,ModelMap modelMap){
-        List<UserDto> listUser = userService.getUser();
-        modelMap.addAttribute("listUser",listUser);
-        return "UserView/view_user";
-    }
+//    @RequestMapping(value = "/view_user" , method =  RequestMethod.GET)
+//    public String viewUser(UserDto userDto,ModelMap modelMap){
+//        List<UserDto> listUser = userService.getUser();
+//        modelMap.addAttribute("listUser",listUser);
+//        return "UserView/view_user";
+//    }
 }

@@ -13,15 +13,10 @@ import project.ta.elearning.model.Tb_userModel;
  * @author Sou
  */
 public interface Tb_userDao {
-//    public List<JenisKlinikModel> listJenisKlinik() throws Exception;
-//
-//    public List<JenisKlinikModel> listJenisKlinikUpdate(Integer id) throws Exception;
-//
-//    public JenisKlinikModel getJenisKlinikById(Integer id) throws Exception;
     public List<Tb_userModel> loginUser (String username,String password);
     public void saveData(Tb_userModel userModel);
-//
-//    public void updateDataJenisKlinik(JenisKlinikModel jenisKlinikModel) throws Exception;
-//
-//    public void hapusJenisKlinik(Integer id);   
+    public List<Tb_userModel> getData();
+    public void deleteData(Integer id);
+    public void updateData(Tb_userModel model);
+    public List<Tb_userModel> getDataById(Integer id);
 }

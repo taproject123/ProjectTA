@@ -13,15 +13,11 @@ import project.ta.elearning.dto.Tb_userDto;
  * @author Sou
  */
 public interface Tb_userService {
-//    public List<JenisKlinikDto> listJenisKlinik() throws Exception;
-//
-//    public JenisKlinikDto listJenisKlinikUpdate(Integer id) throws Exception;
-
+    public List<Tb_userDto> getData();
     public void saveData(Tb_userDto userDto);
     public Integer loginUser(String username,String password);
     public Tb_userDto selectUser(String username,String password);
-//
-//    public void updateDataJenisKlinik(JenisKlinikDto jenisKlinikDto) throws Exception;
-//
-//    public void hapusJenisKlinik(Integer id);
+    public void deleteData(Integer id);
+    public void updateData(Tb_userDto dao);
+    public Tb_userDto getDataById(Integer id);
 }

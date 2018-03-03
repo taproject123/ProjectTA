@@ -32,7 +32,6 @@ public class Tb_roleServiceImpl implements Tb_roleService{
         if(listModel.size()>0){
             for (Tb_roleModel list : listModel) {
                 Tb_roleDto roleDto = new Tb_roleDto();
-                
                 roleDto.setId(list.getId());
                 roleDto.setName(list.getName());
                 roleDto.setShortname(list.getShortname());
@@ -41,6 +40,60 @@ public class Tb_roleServiceImpl implements Tb_roleService{
             }
         }
         return listDto;
+    }
+
+    @Override
+    public void saveData(Tb_roleDto userDto) {
+        Tb_roleModel roleModel = new Tb_roleModel();
+        try {
+            roleModel.setId(userDto.getId());
+            roleModel.setName(userDto.getName());
+            roleModel.setDescription(userDto.getDescription());
+            roleModel.setShortname(userDto.getShortname());
+            tb_roleDao.saveData(roleModel);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
+
+    @Override
+    public void deleteData(Integer id) {
+        try {
+            tb_roleDao.deleteData(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateData(Tb_roleDto roleDto) {
+       Tb_roleModel roleModel = new Tb_roleModel();
+        try {
+            roleModel.setId(roleDto.getId());
+            roleModel.setName(roleDto.getName());
+            roleModel.setDescription(roleDto.getDescription());
+            roleModel.setShortname(roleDto.getShortname());
+            tb_roleDao.updateData(roleModel);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public Tb_roleDto getDataById(Integer id) {
+        Tb_roleDto roleDto = new Tb_roleDto();
+        List<Tb_roleModel> listModel = tb_roleDao.getDataById(id);
+        if(listModel.size()>0){
+            for (Tb_roleModel list : listModel) {
+                roleDto = new Tb_roleDto();
+                roleDto.setId(list.getId());
+                roleDto.setName(list.getName());
+                roleDto.setShortname(list.getShortname());
+                roleDto.setDescription(list.getDescription());
+            }
+        }
+        return roleDto;
     }
     
 }

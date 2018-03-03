@@ -14,4 +14,8 @@ import project.ta.elearning.model.Tb_roleModel;
  */
 public interface Tb_roleDao {
     public List<Tb_roleModel> getData();
+    public void saveData(Tb_roleModel userModel);
+    public void deleteData(Integer id);
+    public void updateData(Tb_roleModel model);
+    public List<Tb_roleModel> getDataById(Integer id);
 }

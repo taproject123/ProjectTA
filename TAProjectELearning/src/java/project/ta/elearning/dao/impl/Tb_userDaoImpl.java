@@ -47,8 +47,10 @@ public class Tb_userDaoImpl extends HibernateUtil implements Tb_userDao{
 
     @Override
     public void deleteData(Integer id) {
+        Tb_userModel userModel = new Tb_userModel();
+        userModel.setId(id);
         try {
-            getSession().delete(id);
+            getSession().delete(userModel);
         } catch (Exception e) {
             e.printStackTrace();
         }

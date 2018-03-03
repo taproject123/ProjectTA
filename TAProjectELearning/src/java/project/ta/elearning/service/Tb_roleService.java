@@ -15,4 +15,8 @@ import project.ta.elearning.dto.Tb_roleDto;
 
 public interface Tb_roleService {
     public List<Tb_roleDto> getData(); 
+    public void saveData(Tb_roleDto dto);
+    public void deleteData(Integer id);
+    public void updateData(Tb_roleDto dto);
+    public Tb_roleDto getDataById(Integer id);
 }

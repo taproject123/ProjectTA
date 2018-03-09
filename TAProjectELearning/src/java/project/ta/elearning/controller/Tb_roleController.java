@@ -30,9 +30,22 @@ public class Tb_roleController {
         return "admin/role/form_tambah_role";
     }
     
+    @RequestMapping(value = "/form_ubah_role",method = RequestMethod.GET)
+    public String formUbahRole(ModelMap map,Tb_roleDto roleDto,Integer id){
+        roleDto = tb_roleService.getDataById(id);
+        map.addAttribute("roleDto", roleDto);
+        return "admin/role/form_ubah_role";
+    }
+    
     @RequestMapping(value = "/save_role",method = RequestMethod.POST)
     public String saveRole(Tb_roleDto roleDto){
         tb_roleService.saveData(roleDto);
+        return "redirect:view_role.htm";
+    }
+    
+    @RequestMapping(value = "/update_role",method = RequestMethod.POST)
+    public String ubahRole(Tb_roleDto roleDto){
+        tb_roleService.updateData(roleDto);
         return "redirect:view_role.htm";
     }
     
@@ -48,6 +61,9 @@ public class Tb_roleController {
         tb_roleService.deleteData(id);
         return "redirect:view_role.htm";
     }
+    
+    
+    
     
     
 }

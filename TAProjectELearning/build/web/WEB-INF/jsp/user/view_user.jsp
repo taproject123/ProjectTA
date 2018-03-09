@@ -47,8 +47,15 @@
                 <th>Middle Name</th>
                 <th>Alternate Name</th>
                 <th>Role</th>
+                <th>Action</th>
             </thead>
             <c:forEach var="listData" items="${listUser}">
+                <c:url var="delete" value="delete_user.htm">
+                    <c:param name="id" value="${data.id}"/>
+                </c:url>
+                <c:url var="update" value="form_ubah_user.htm">
+                    <c:param name="id" value="${data.id}"/>
+                </c:url>
                 <tbody>
                     <td>${listData.id}</td>
                     <td>${listData.username}</td>
@@ -80,6 +87,7 @@
                     <td>${listData.middlename}</td>
                     <td>${listData.alternatename}</td>
                     <td>${listData.id_role}</td>
+                    <td><a href="${delete}">X</a> <a href="${update}">O</a></td>
                 </tbody>
             </c:forEach>
         </table>

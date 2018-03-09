@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import project.ta.elearning.dto.Tb_roleDto;
 import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.service.Tb_roleService;
@@ -36,8 +37,7 @@ public class Tb_userController {
         List<Tb_roleDto> listRole = tb_roleService.getData();
         map.addAttribute("userDto", userDto);
         map.addAttribute("listRole", listRole);
-        return "user/form_tambah_user";
-            
+        return "user/form_tambah_user";            
     }
 
     @RequestMapping(value = "/save_user", method = RequestMethod.POST)
@@ -47,7 +47,6 @@ public class Tb_userController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
         return "redirect:view_user.htm";
     }
 
@@ -68,8 +67,6 @@ public class Tb_userController {
         } catch (Exception e) {
             return "login";
         }
-        
-        
         return "login";
     }
     
@@ -78,6 +75,31 @@ public class Tb_userController {
         List<Tb_userDto> listUser = tb_userService.getData();
         map.addAttribute("listUser", listUser);
         return "user/view_user";
+    }
+    
+    @RequestMapping(value = "/form_tambah_user",method = RequestMethod.GET)
+    public String formTambahUser(ModelMap map,Tb_userDto userDto){
+        map.addAttribute("userDto", userDto);
+        return "admin/user/form_tambah_user";
+    }
+//    @ResponseBody
+    @RequestMapping(value = "/form_ubah_user",method = RequestMethod.GET)
+    public String formUbahUser(ModelMap map,Tb_userDto userDto,Integer id){
+        userDto = tb_userService.getDataById(id);
+        map.addAttribute("userDto", userDto);
+        return "admin/user/form_ubah_user";
+    }
+    
+    @RequestMapping(value = "/update_user",method = RequestMethod.POST)
+    public String ubahUser(Tb_userDto userDto){
+        tb_userService.updateData(userDto);
+        return "redirect:view_user.htm";
+    }
+    
+    @RequestMapping(value = "/delete_user",method = RequestMethod.GET)
+    public String deleteUser(Integer id){
+        tb_userService.deleteData(id);
+        return "redirect:view_user.htm";
     }
 
 }

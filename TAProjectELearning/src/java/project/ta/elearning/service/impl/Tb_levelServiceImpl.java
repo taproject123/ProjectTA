@@ -79,7 +79,7 @@ public class Tb_levelServiceImpl implements Tb_levelService{
     @Override
     public Tb_levelDto getDataById(Integer id) {
         Tb_levelDto dto = new Tb_levelDto();
-        List<Tb_levelModel> listModel = tb_levelDao.getData();
+        List<Tb_levelModel> listModel = tb_levelDao.getDataById(id);
         if(listModel.size()>0){
             for (Tb_levelModel model : listModel) {
                 dto = new Tb_levelDto();

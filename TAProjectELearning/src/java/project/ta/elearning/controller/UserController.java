@@ -24,7 +24,10 @@ public class UserController {
     
     @Autowired
     UserService  userService;
-    
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String viewAdmin(){
+        return "linkAdmin";
+    }
 //    @RequestMapping(value = "/view_user" , method =  RequestMethod.GET)
 //    public String viewUser(UserDto userDto,ModelMap modelMap){
 //        List<UserDto> listUser = userService.getUser();

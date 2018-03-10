@@ -40,7 +40,7 @@
                 <value>project/ta/elearning/model/Tb_freeQuizModel.hbm.xml</value>
                 <value>project/ta/elearning/model/Tb_levelModel.hbm.xml</value>
                 <value>project/ta/elearning/model/Tb_weklyQuizModel.hbm.xml</value>
-                <value>project/ta/elearning/model/Tb_jurusanModel.hbm.xml</value>
+                <value>project/ta/elearning/model/Tb_majorsModel.hbm.xml</value>
                 <value>project/ta/elearning/model/Tb_nilaiModel.hbm.xml</value>
                 <value>project/ta/elearning/model/Tb_materiSyaratModel.hbm.xml</value>
                 <value>project/ta/elearning/model/Tb_fileModel.hbm.xml</value>
@@ -77,5 +77,8 @@
     
     <bean id="tb_levelDao" class="project.ta.elearning.dao.impl.Tb_levelDaoImpl"/>
     <bean id="tb_levelService" class="project.ta.elearning.service.impl.Tb_levelServiceImpl"/>
+    
+    <bean id="tb_courseDao" class="project.ta.elearning.dao.impl.Tb_courseDaoImpl"/>
+    <bean id="tb_courseService" class="project.ta.elearning.service.impl.Tb_courseServiceImpl"/>
     
 </beans>

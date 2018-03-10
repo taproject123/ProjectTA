@@ -10,10 +10,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import project.ta.elearning.dao.Tb_assignmentDao;
-import project.ta.elearning.dto.Tb_assignmentDto;
-import project.ta.elearning.model.Tb_assignmentModel;
-import project.ta.elearning.service.Tb_assignmentService;
+import project.ta.elearning.dao.Tb_lessonDao;
+import project.ta.elearning.dto.Tb_lessonDto;
+import project.ta.elearning.model.Tb_lessonModel;
+import project.ta.elearning.service.Tb_lessonService;
 
 /**
  *
@@ -21,18 +21,18 @@ import project.ta.elearning.service.Tb_assignmentService;
  */
 @Transactional
 @Service
-public class Tb_assignmentServiceImpl implements Tb_assignmentService{
+public class Tb_lessonServiceImpl implements Tb_lessonService{
 
     @Autowired
-    Tb_assignmentDao tb_assignmentDao;
+    Tb_lessonDao tb_lessonDao;
     
     @Override
-    public List<Tb_assignmentDto> getData() {
-        List<Tb_assignmentDto> listData = new ArrayList<>();
-        List<Tb_assignmentModel> listModel = tb_assignmentDao.getData();
+    public List<Tb_lessonDto> getData() {
+        List<Tb_lessonDto> listData = new ArrayList<>();
+        List<Tb_lessonModel> listModel = tb_lessonDao.getData();
         if(listModel.size()>0){
-            for (Tb_assignmentModel model : listModel) {
-                Tb_assignmentDto dto = new Tb_assignmentDto();
+            for (Tb_lessonModel model : listModel) {
+                Tb_lessonDto dto = new Tb_lessonDto();
                 dto.setId(model.getId());
                 dto.setId(model.getId());
                 dto.setCourse(model.getCourse());
@@ -45,13 +45,13 @@ public class Tb_assignmentServiceImpl implements Tb_assignmentService{
     }
 
     @Override
-    public void saveData(Tb_assignmentDto dto) {
-        Tb_assignmentModel model = new Tb_assignmentModel();
+    public void saveData(Tb_lessonDto dto) {
+        Tb_lessonModel model = new Tb_lessonModel();
         try {
             model.setId(dto.getId());
             model.setCourse(dto.getCourse());
             model.setName(dto.getName());
-            tb_assignmentDao.saveData(model);
+            tb_lessonDao.saveData(model);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -61,32 +61,32 @@ public class Tb_assignmentServiceImpl implements Tb_assignmentService{
     @Override
     public void deleteData(Integer id) {
         try {
-            tb_assignmentDao.deleteData(id);
+            tb_lessonDao.deleteData(id);
         } catch (Exception e) {
             
         }
     }
 
     @Override
-    public void updateData(Tb_assignmentDto dto) {
-        Tb_assignmentModel model = new Tb_assignmentModel();
+    public void updateData(Tb_lessonDto dto) {
+        Tb_lessonModel model = new Tb_lessonModel();
         try {
             model.setId(dto.getId());
             model.setCourse(dto.getCourse());
             model.setName(dto.getName());
-            tb_assignmentDao.updateData(model);
+            tb_lessonDao.updateData(model);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public Tb_assignmentDto getDataById(Integer id) {
-        Tb_assignmentDto dto = new Tb_assignmentDto();
-        List<Tb_assignmentModel> listModel = tb_assignmentDao.getDataById(id);
+    public Tb_lessonDto getDataById(Integer id) {
+        Tb_lessonDto dto = new Tb_lessonDto();
+        List<Tb_lessonModel> listModel = tb_lessonDao.getDataById(id);
         if(listModel.size()>0){
-            for (Tb_assignmentModel model : listModel) {
-                dto = new Tb_assignmentDto();
+            for (Tb_lessonModel model : listModel) {
+                dto = new Tb_lessonDto();
                 dto.setId(model.getId());
                 dto.setId(model.getId());
                 dto.setCourse(model.getCourse());

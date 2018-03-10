@@ -16,7 +16,7 @@
     <mapping resource="project/ta/elearning/model/Tb_freeQuizModel.hbm.xml"/>
     <mapping resource="project/ta/elearning/model/Tb_levelModel.hbm.xml"/>
     <mapping resource="project/ta/elearning/model/Tb_weklyQuizModel.hbm.xml"/>
-    <mapping resource="project/ta/elearning/model/Tb_jurusanModel.hbm.xml"/>
+    <mapping resource="project/ta/elearning/model/Tb_majorsModel.hbm.xml"/>
     <mapping resource="project/ta/elearning/model/Tb_nilaiModel.hbm.xml"/>
     <mapping resource="project/ta/elearning/model/Tb_materiSyaratModel.hbm.xml"/>
     <mapping resource="project/ta/elearning/model/Tb_fileModel.hbm.xml"/>

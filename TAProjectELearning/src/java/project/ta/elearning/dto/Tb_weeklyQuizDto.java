@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project.ta.elearning.model;
+package project.ta.elearning.dto;
 
 /**
  *
  * @author Sou
  */
-public class Tb_weeklyQuizModel {
+public class Tb_weeklyQuizDto {
     private Integer id;
     private String weekly_quiz;
     private String answer;
@@ -20,7 +20,7 @@ public class Tb_weeklyQuizModel {
     private String timemodified;
     private Integer id_course;
     private Integer id_materi;
-
+   
     public Integer getId() {
         return id;
     }
@@ -100,5 +100,7 @@ public class Tb_weeklyQuizModel {
     public void setId_materi(Integer id_materi) {
         this.id_materi = id_materi;
     }
-    
+
+   
+
 }

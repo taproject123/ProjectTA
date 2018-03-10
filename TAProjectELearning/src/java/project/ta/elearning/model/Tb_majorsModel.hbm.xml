@@ -5,11 +5,11 @@
   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="project.ta.elearning.model.Tb_jurusanModel" table="tb_jurusan">
+    <class name="project.ta.elearning.model.Tb_majorsModel" table="tb_majors">
         <id name="id" column="id">
             <generator class="native"/>
         </id>
-        <property name="jurusan" column="jurusan"/>
+        <property name="majors" column="majors"/>
     </class>
   
 

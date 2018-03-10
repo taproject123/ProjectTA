@@ -86,8 +86,10 @@ public class Tb_userController {
     @RequestMapping(value = "/form_ubah_user",method = RequestMethod.GET)
     public String formUbahUser(ModelMap map,Tb_userDto userDto,Integer id){
         userDto = tb_userService.getDataById(id);
+        List<Tb_roleDto> listRole = tb_roleService.getData();
         map.addAttribute("userDto", userDto);
-        return "admin/user/form_ubah_user";
+        map.addAttribute("listRole", listRole);
+        return "user/form_ubah_user";
     }
     
     @RequestMapping(value = "/update_user",method = RequestMethod.POST)
@@ -95,7 +97,7 @@ public class Tb_userController {
         tb_userService.updateData(userDto);
         return "redirect:view_user.htm";
     }
-    
+//    @ResponseBody
     @RequestMapping(value = "/delete_user",method = RequestMethod.GET)
     public String deleteUser(Integer id){
         tb_userService.deleteData(id);

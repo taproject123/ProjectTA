@@ -25,23 +25,9 @@ import project.ta.elearning.service.UserService;
 @SessionAttributes({"username", "password","firstname","lastname","role"})
 @Controller
 public class LoginController {
-//    @Autowired
-//    UserService userService;
-//    @RequestMapping(value = "/loginAction" , method =  RequestMethod.GET)
-//    public String loginAction(String username,String password,HttpSession session,ModelMap modelMap){
-//        int data = userService.actionLogin(username,password );
-//        if(data > 0) {
-//            return "index";
-//        } else {
-//            UserDto  userDto = new UserDto();
-//            modelMap.addAttribute("loginDto", userDto);
-//            return "login";
-//        }
-//        
-//    }
     @Autowired
     Tb_userService tb_userService;
-    @RequestMapping(value = "/loginAction" , method =  RequestMethod.POST)
+    @RequestMapping(value = "/loginAction" , method =  RequestMethod.GET)
     public String loginAction(String username,String password,HttpSession session,ModelMap modelMap){
         int data = tb_userService.loginUser(username, password);
         Tb_userDto listUser = tb_userService.selectUser(username, password);

@@ -51,10 +51,10 @@
             </thead>
             <c:forEach var="listData" items="${listUser}">
                 <c:url var="delete" value="delete_user.htm">
-                    <c:param name="id" value="${data.id}"/>
+                    <c:param name="id" value="${listData.id}"/>
                 </c:url>
                 <c:url var="update" value="form_ubah_user.htm">
-                    <c:param name="id" value="${data.id}"/>
+                    <c:param name="id" value="${listData.id}"/>
                 </c:url>
                 <tbody>
                     <td>${listData.id}</td>

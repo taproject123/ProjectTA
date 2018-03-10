@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project.ta.elearning.model;
+package project.ta.elearning.dto;
 
 /**
  *
  * @author Sou
  */
-public class Tb_jurusanModel {
+public class Tb_majorsDto {
     private Integer id;
-    private String jurusan;
+    private String majors;
 
     public Integer getId() {
         return id;
@@ -21,12 +21,12 @@ public class Tb_jurusanModel {
         this.id = id;
     }
 
-    public String getJurusan() {
-        return jurusan;
+    public String getMajors() {
+        return majors;
     }
 
-    public void setJurusan(String jurusan) {
-        this.jurusan = jurusan;
+    public void setMajors(String majors) {
+        this.majors = majors;
     }
-    
+
 }

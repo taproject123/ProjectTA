@@ -8,6 +8,7 @@ package project.ta.elearning.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
 import project.ta.elearning.dao.Tb_roleDao;
 import project.ta.elearning.model.Tb_roleModel;
 
@@ -15,6 +16,7 @@ import project.ta.elearning.model.Tb_roleModel;
  *
  * @author Sou
  */
+@Repository
 public class Tb_roleDaoImpl extends HibernateUtil implements Tb_roleDao{
 
     @Override

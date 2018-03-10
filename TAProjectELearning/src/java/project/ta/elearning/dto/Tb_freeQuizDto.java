@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project.ta.elearning.model;
+package project.ta.elearning.dto;
 
 /**
  *
  * @author Sou
  */
-public class Tb_freeQuizModel {
+public class Tb_freeQuizDto {
     private Integer id;
     private String free_quiz;
     private String answer;

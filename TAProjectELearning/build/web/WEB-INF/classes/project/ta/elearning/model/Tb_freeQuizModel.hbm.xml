@@ -10,7 +10,7 @@
             <generator class="native"/>
         </id>
         <property name="free_quiz" column="free_quiz" type="string" length="255"/>
-        <property name="jawaban" column="jawaban" type="string" length="255"/> 
+        <property name="answer" column="answer" type="string" length="255"/> 
         <property name="timeopen" column="timeopen" type="string" length="255"/>
         <property name="timeclose" column="timeclose" type="string" length="255"/>
         <property name="timelimit" column="timelimit" type="string" length="255"/>

@@ -217,7 +217,13 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 	line-height: 1.3em;
 }
 
+.kaka {
+    height: 100px;
+}
 
+.field1 {
+    padding: 0;
+}
 
 @media (max-width: 480px) {
 	

@@ -7,6 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/resources/css/bootstrap-responsive.min.css" />" rel="stylesheet" type="text/css" />
+<link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" type="text/css">
+<link href="<c:url value="/resources/css/pages/signin.css" />" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,45 +22,143 @@
         <title>Tambah User</title>
     </head>
     <body>
-<!--        <p>User Sekarang adalah ${username} dengan password ${password} / silahkan log out untuk menghapus session ini</p>-->
         <form:form modelAttribute="userDto" name="form_user" method="POST" action="save_user.htm">
-            <form:input path="id" placeholder="id" /><br/>
-            <form:input path="username" placeholder="username" /><br/>
-            <form:input path="password" placeholder="password" /><br/>
-            <form:input path="firstname" placeholder="firstname" /><br/>
-            <form:input path="lastname" placeholder="lastname" /><br/>
-            <form:input path="email" placeholder="email" /><br/>
-            <form:input path="skype" placeholder="skype" /><br/>
-            <form:input path="yahoo" placeholder="yahoo" /><br/>
-            <form:input path="phone1" placeholder="phone1" /><br/>
-            <form:input path="phone2" placeholder="phone2" /><br/>
-            <form:input path="institution" placeholder="institution" /><br/>
-            <form:input path="department" placeholder="department" /><br/>
-            <form:input path="address" placeholder="address" /><br/>
-            <form:input path="city" placeholder="city" /><br/>
-            <form:input path="country" placeholder="country" /><br/>
-            <form:input path="timezone" placeholder="timezone" /><br/>
-            <form:input path="firstaccess" placeholder="firstaccess" /><br/>
-            <form:input path="lastaccess" placeholder="lastaccess" /><br/>
-            <form:input path="lastlogin" placeholder="lastlogin" /><br/>
-            <form:input path="currentlogin" placeholder="currentlogin" /><br/>
-            <form:input path="picture" placeholder="picture" /><br/>
-            <form:input path="description" placeholder="description" /><br/>
-            <form:input path="timecreated" placeholder="timecreated" /><br/>
-            <form:input path="timemodified" placeholder="timemodified" /><br/>
-            <form:input path="imagealt" placeholder="imagealt" /><br/>
-            <form:input path="lastnamephonetic" placeholder="lastnamephonetic" /><br/>
-            <form:input path="firstnamephonetic" placeholder="firstnamephonetic" /><br/>
-            <form:input path="middlename" placeholder="middlename" /><br/>
-            <form:input path="alternatename" placeholder="alternatename" /><br/>
-            <form:select path="id_role" >
-                <option>Role</option>
-                <c:forEach items="${listRole}" var="listData" >
-                    <option value="${listData.id}">${listData.name}</option>
-                </c:forEach>
-            </form:select>
-            
-            <input type="submit" value="Simpan"/>
+	<div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="index.html">Good Learner</a>	
+                        <div class="nav-collapse">
+                            <ul class="nav pull-right">
+                                <li class="">						
+                                    <a href="login.htm" class="">Sudah punya akun? Login sekarang</a>
+
+                                </li>
+                                <li class="">						
+                                    <a href="index.html" class="">
+                                        <i class="icon-chevron-left"></i>Kembali ke Beranda
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!--/.nav-collapse -->	
+                </div> <!-- /container -->
+            </div> <!-- /navbar-inner -->
+        </div> <!-- /navbar -->
+<!--        <p>User Sekarang adalah ${username} dengan password ${password} / silahkan log out untuk menghapus session ini</p>-->
+        <div class="account-container register">
+	<div class="content clearfix">
+            <form action="#" method="post">
+		<h1>Signup for Free Account</h1>
+                    <div class="login-fields">
+			<p>Create your free account:</p>
+                        
+                        
+                            <div class="field1">
+                                <form:input path="id" placeholder="id" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="username" placeholder="username" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="password" placeholder="password" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="firstname" placeholder="firstname" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="lastname" placeholder="lastname" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="email" placeholder="email" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="skype" placeholder="skype" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="yahoo" placeholder="yahoo" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="phone1" placeholder="phone1" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="phone2" placeholder="phone2" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="institution" placeholder="institution" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="department" placeholder="department" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="address" placeholder="address" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="city" placeholder="city" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="country" placeholder="country" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="timezone" placeholder="timezone" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="firstaccess" placeholder="firstaccess" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="lastaccess" placeholder="lastaccess" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="lastlogin" placeholder="lastlogin" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="currentlogin" placeholder="currentlogin" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="picture" placeholder="picture" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="description" placeholder="description" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="timecreated" placeholder="timecreated" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="timemodified" placeholder="timemodified" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="imagealt" placeholder="imagealt" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="lastnamephonetic" placeholder="lastnamephonetic" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="firstnamephonetic" placeholder="firstnamephonetic" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="middlename" placeholder="middlename" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:input path="alternatename" placeholder="alternatename" class="login" style="height:40px;"/><br/>
+                            </div> <!-- /field -->
+                            <div class="field1">
+                                <form:select path="id_role" style="height:40px;">
+                                    <option>Role</option>
+                                    <c:forEach items="${listRole}" var="listData" >
+                                        <option value="${listData.id}">${listData.name}</option>
+                                    </c:forEach>
+                                </form:select>
+                            </div> <!-- /field -->
+                        
+                            <input type="submit" value="Simpan"/>
+                        
+                    </div> <!-- .actions -->
+		</form>
+            </div> <!-- /content -->
+        </div> <!-- /account-container -->
         </form:form>
     </body>
 </html>

@@ -54,12 +54,12 @@
                                 <p>Isi form berikut</p>
                                 <div class="field">
                                     <label for="username">Username</label>
-                                    <form:input class="login username-field" path="username"/>
+                                    <form:input class="login username-field" path="username" style="height:40px;"/>
                                 </div> <!-- /field -->
 
                                 <div class="field">
                                     <label for="password">Password:</label>
-                                    <form:input path="password" class="login password-field"/>
+                                    <form:input path="password" class="login password-field" style="height:40px;"/>
                                 </div> <!-- /password -->
                             </div> <!-- /login-fields -->
                             <div class="login-actions">

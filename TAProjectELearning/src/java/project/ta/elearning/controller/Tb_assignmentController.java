@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import project.ta.elearning.dto.Tb_assignmentDto;
+import project.ta.elearning.dto.Tb_courseDto;
 import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.service.Tb_assignmentService;
+import project.ta.elearning.service.Tb_courseService;
 
 /**
  *
@@ -26,9 +28,14 @@ public class Tb_assignmentController {
     @Autowired
     Tb_assignmentService tb_assignmentService;
     
+    @Autowired
+    Tb_courseService tb_courseService;
+    
     @RequestMapping(value = "/form_tambah_assignment",method = RequestMethod.GET)
     public String formTambahAssignment(ModelMap map,Tb_assignmentDto assignmentDto,HttpSession session, Tb_userDto userDto){
         map.addAttribute("loginDto", userDto);
+        List<Tb_courseDto> listCourse = tb_courseService.getData();
+        map.addAttribute("listCourse", listCourse);
         try {
             if (session.getAttribute("username") == null) {
                 return "login";
@@ -52,6 +59,8 @@ public class Tb_assignmentController {
     public String formUbahAssignment(ModelMap map,Tb_assignmentDto assignmentDto,Integer id,HttpSession session, Tb_userDto userDto){
         assignmentDto = tb_assignmentService.getDataById(id);
         map.addAttribute("loginDto", userDto);
+        List<Tb_courseDto> listCourse = tb_courseService.getData();
+        map.addAttribute("listCourse", listCourse);
         try {
             if (session.getAttribute("username") == null) {
                 return "login";

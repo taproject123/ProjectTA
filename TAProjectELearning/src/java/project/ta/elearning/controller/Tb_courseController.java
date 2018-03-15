@@ -69,15 +69,47 @@ public class Tb_courseController {
     
     @RequestMapping(value = "/form_tambah_course",method = RequestMethod.GET)
     public String formTambahCourse(ModelMap map,Tb_courseDto courseDto,HttpSession session, Tb_userDto userDto){
-        map.addAttribute("courseDto", courseDto);
-        return "admin/course/form_tambah_course";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("courseDto", courseDto);
+                    return "admin/course/form_tambah_course";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
 //    @ResponseBody
     @RequestMapping(value = "/form_ubah_course",method = RequestMethod.GET)
     public String formUbahCourse(ModelMap map,Tb_courseDto courseDto,Integer id,HttpSession session, Tb_userDto userDto){
         courseDto = tb_courseService.getDataById(id);
-        map.addAttribute("courseDto", courseDto);
-        return "admin/course/form_ubah_course";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("courseDto", courseDto);
+                    return "admin/course/form_ubah_course";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/update_course",method = RequestMethod.POST)

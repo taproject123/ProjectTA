@@ -15,7 +15,11 @@
     <body>
         <form:form modelAttribute="assignmentDto" method="POST" action="update_assignment.htm">
             <form:input path="id" placeholder="ID Assignment"/><br/>
-            <form:input path="course" placeholder="Course"/><br/>
+            <form:select path="course" >
+                <c:forEach items="${listCourse}" var="data">
+                    <option value="${data.id}">${data.shortname}</option>
+                </c:forEach>
+            </form:select><br/>
             <form:input path="name" placeholder="Name"/><br/>
             <input type="submit" value="Submit"/>
         </form:form>

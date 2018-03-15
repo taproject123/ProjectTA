@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.dto.Tb_valueDto;
+import project.ta.elearning.service.Tb_userService;
 import project.ta.elearning.service.Tb_valueService;
 
 /**
@@ -25,9 +26,14 @@ public class Tb_valueController {
     @Autowired
     Tb_valueService tb_valueService;
     
+    @Autowired
+    Tb_userService tb_userService;
+    
     @RequestMapping(value = "/form_tambah_value",method = RequestMethod.GET)
     public String formTambahValue(ModelMap map,Tb_valueDto valueDto,HttpSession session, Tb_userDto userDto){
         map.addAttribute("loginDto", userDto);
+        List<Tb_userDto> listUser = tb_userService.getData();
+        map.addAttribute("listUser", listUser);
         try {
             if (session.getAttribute("username") == null) {
                 return "login";
@@ -51,6 +57,8 @@ public class Tb_valueController {
     public String formUbahValue(ModelMap map,Tb_valueDto valueDto,Integer id,HttpSession session, Tb_userDto userDto){
         valueDto = tb_valueService.getDataById(id);
         map.addAttribute("loginDto", userDto);
+        List<Tb_userDto> listUser = tb_userService.getData();
+        map.addAttribute("listUser", listUser);
         try {
             if (session.getAttribute("username") == null) {
                 return "login";

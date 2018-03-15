@@ -3,58 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/user/view_user.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/Tb_roleDao.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_roleController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/role/form_tambah_role.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_userController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/user/form_ubah_user.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/freeQuiz/view_freeQuiz.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/Tb_assignmentService.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/Tb_roleService.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_userServiceImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_assignmentController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/impl/Tb_levelDaoImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/Tb_levelDao.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/Tb_assignmentDao.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/Tb_freeQuizDao.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/UserController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_userDto.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/impl/Tb_userDaoImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/role/view_role.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_roleServiceImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_levelModel.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/linkAdmin.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/role/form_ubah_role.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/freeQuiz/form_tambah_freeQuiz.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_freeQuizServiceImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/impl/Tb_assignmentDaoImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/LoginController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/impl/Tb_roleDaoImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_levelServiceImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/assignment/view_assignment.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/Tb_levelService.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/Tb_userDao.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/applicationContext.xml</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_freeQuizModel.hbm.xml</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/impl/Tb_freeQuizDaoImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_assignmentModel.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_roleDto.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/level/form_tambah_level.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/level/form_ubah_level.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/level/view_level.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/Tb_userService.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/LogOutController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_levelDto.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_freeQuizDto.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_assignmentDto.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/freeQuiz/form_ubah_freeQuiz.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_levelController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_assignmentServiceImpl.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/user/form_tambah_user.jsp</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/Tb_freeQuizService.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_freeQuizController.java</file>
-            <file>file:/E:/TAProject/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_freeQuizModel.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/index.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/redirect.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_roleController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_userController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/level/view_level.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/LogOutController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_levelController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/LoginController.java</file>
         </group>
     </open-files>
 </project-private>

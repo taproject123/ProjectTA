@@ -12,22 +12,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import project.ta.elearning.dto.Tb_levelDto;
 import project.ta.elearning.dto.Tb_userDto;
-import project.ta.elearning.service.Tb_levelService;
+import project.ta.elearning.dto.Tb_valueDto;
+import project.ta.elearning.service.Tb_valueService;
 
 /**
  *
  * @author Sou
  */
 @Controller
-public class Tb_levelController {
-
+public class Tb_valueController {
     @Autowired
-    Tb_levelService tb_levelService;
-
-    @RequestMapping(value = "/form_tambah_level", method = RequestMethod.GET)
-    public String formTambahLevel(ModelMap map, Tb_levelDto levelDto, HttpSession session, Tb_userDto userDto) {
+    Tb_valueService tb_valueService;
+    
+    @RequestMapping(value = "/form_tambah_value",method = RequestMethod.GET)
+    public String formTambahValue(ModelMap map,Tb_valueDto valueDto,HttpSession session, Tb_userDto userDto){
         map.addAttribute("loginDto", userDto);
         try {
             if (session.getAttribute("username") == null) {
@@ -37,19 +36,20 @@ public class Tb_levelController {
                 if (role != 3) {
                     return "login";
                 } else {
-                    map.addAttribute("levelDto", levelDto);
-                    return "admin/level/form_tambah_level";
+                    map.addAttribute("valueDto", valueDto);
+                    return "admin/value/form_tambah_value";
                 }
                 
             }
         } catch (Exception e) {
             return "login";
         }
+        
     }
-
-    @RequestMapping(value = "/form_ubah_level", method = RequestMethod.GET)
-    public String formUbahLevel(ModelMap map, Tb_levelDto levelDto, Integer id, HttpSession session, Tb_userDto userDto) {
-        levelDto = tb_levelService.getDataById(id);
+    
+    @RequestMapping(value = "/form_ubah_value",method = RequestMethod.GET)
+    public String formUbahValue(ModelMap map,Tb_valueDto valueDto,Integer id,HttpSession session, Tb_userDto userDto){
+        valueDto = tb_valueService.getDataById(id);
         map.addAttribute("loginDto", userDto);
         try {
             if (session.getAttribute("username") == null) {
@@ -59,33 +59,33 @@ public class Tb_levelController {
                 if (role != 3) {
                     return "login";
                 } else {
-                    map.addAttribute("levelDto", levelDto);
-                    return "admin/level/form_ubah_level";
+                    map.addAttribute("valueDto", valueDto);
+                    return "admin/value/form_ubah_value";
                 }
                 
             }
         } catch (Exception e) {
             return "login";
         }
-
+        
     }
-
-    @RequestMapping(value = "/save_level", method = RequestMethod.POST)
-    public String saveLevel(Tb_levelDto levelDto) {
-        tb_levelService.saveData(levelDto);
-        return "redirect:view_level.htm";
+    
+    @RequestMapping(value = "/save_value",method = RequestMethod.POST)
+    public String saveValue(Tb_valueDto valueDto){
+        tb_valueService.saveData(valueDto);
+        return "redirect:view_value.htm";
     }
-
-    @RequestMapping(value = "/update_level", method = RequestMethod.POST)
-    public String ubahLevel(Tb_levelDto levelDto) {
-        tb_levelService.updateData(levelDto);
-        return "redirect:view_level.htm";
+    
+    @RequestMapping(value = "/update_value",method = RequestMethod.POST)
+    public String ubahValue(Tb_valueDto valueDto){
+        tb_valueService.updateData(valueDto);
+        return "redirect:view_value.htm";
     }
-
-    @RequestMapping(value = "/view_level", method = RequestMethod.GET)
-    public String viewLevel(Tb_levelDto levelDto, ModelMap map, HttpSession session, Tb_userDto userDto) {
+    
+    @RequestMapping(value = "/view_value",method = RequestMethod.GET)
+    public String viewValue(Tb_valueDto valueDto,ModelMap map,HttpSession session, Tb_userDto userDto){
+        List<Tb_valueDto> listDto = tb_valueService.getData();
         map.addAttribute("loginDto", userDto);
-        List<Tb_levelDto> listDto = tb_levelService.getData();
         try {
             if (session.getAttribute("username") == null) {
                 return "login";
@@ -94,18 +94,21 @@ public class Tb_levelController {
                 if (role != 3) {
                     return "login";
                 } else {
-                    map.addAttribute("listLevel", listDto);
-                    return "admin/level/view_level";
+                    map.addAttribute("listValue", listDto);
+                    return "admin/value/view_value";
                 }
+                
             }
         } catch (Exception e) {
             return "login";
         }
+        
     }
-    @RequestMapping(value = "/delete_level", method = RequestMethod.GET)
-    public String deleteLevel(Integer id) {
-        tb_levelService.deleteData(id);
-        return "redirect:view_level.htm";
+//    @ResponseBody
+    @RequestMapping(value = "/delete_value",method = RequestMethod.GET)
+    public String deleteValue(Integer id){
+        tb_valueService.deleteData(id);
+        return "redirect:view_value.htm";
     }
-
+    
 }

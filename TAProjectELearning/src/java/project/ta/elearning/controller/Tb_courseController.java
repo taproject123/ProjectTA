@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import project.ta.elearning.dto.Tb_roleDto;
 import project.ta.elearning.dto.Tb_courseDto;
+import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.service.Tb_roleService;
 import project.ta.elearning.service.Tb_courseService;
 
@@ -44,20 +45,36 @@ public class Tb_courseController {
     }
 
     @RequestMapping(value = "/view_course",method = RequestMethod.GET)
-    public String viewCourse(ModelMap map){
+    public String viewCourse(ModelMap map,HttpSession session, Tb_userDto userDto){
         List<Tb_courseDto> listCourse = tb_courseService.getData();
-        map.addAttribute("listCourse", listCourse);
-        return "admin/course/view_course";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("listCourse", listCourse);
+                    return "admin/course/view_course";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/form_tambah_course",method = RequestMethod.GET)
-    public String formTambahCourse(ModelMap map,Tb_courseDto courseDto){
+    public String formTambahCourse(ModelMap map,Tb_courseDto courseDto,HttpSession session, Tb_userDto userDto){
         map.addAttribute("courseDto", courseDto);
         return "admin/course/form_tambah_course";
     }
 //    @ResponseBody
     @RequestMapping(value = "/form_ubah_course",method = RequestMethod.GET)
-    public String formUbahCourse(ModelMap map,Tb_courseDto courseDto,Integer id){
+    public String formUbahCourse(ModelMap map,Tb_courseDto courseDto,Integer id,HttpSession session, Tb_userDto userDto){
         courseDto = tb_courseService.getDataById(id);
         map.addAttribute("courseDto", courseDto);
         return "admin/course/form_ubah_course";

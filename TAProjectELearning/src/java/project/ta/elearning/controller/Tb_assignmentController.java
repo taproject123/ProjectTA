@@ -6,6 +6,7 @@
 package project.ta.elearning.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import project.ta.elearning.dto.Tb_assignmentDto;
+import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.service.Tb_assignmentService;
 
 /**
@@ -25,16 +27,48 @@ public class Tb_assignmentController {
     Tb_assignmentService tb_assignmentService;
     
     @RequestMapping(value = "/form_tambah_assignment",method = RequestMethod.GET)
-    public String formTambahAssignment(ModelMap map,Tb_assignmentDto assignmentDto){
-        map.addAttribute("assignmentDto", assignmentDto);
-        return "admin/assignment/form_tambah_assignment";
+    public String formTambahAssignment(ModelMap map,Tb_assignmentDto assignmentDto,HttpSession session, Tb_userDto userDto){
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("assignmentDto", assignmentDto);
+                    return "admin/assignment/form_tambah_assignment";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/form_ubah_assignment",method = RequestMethod.GET)
-    public String formUbahAssignment(ModelMap map,Tb_assignmentDto assignmentDto,Integer id){
+    public String formUbahAssignment(ModelMap map,Tb_assignmentDto assignmentDto,Integer id,HttpSession session, Tb_userDto userDto){
         assignmentDto = tb_assignmentService.getDataById(id);
-        map.addAttribute("assignmentDto", assignmentDto);
-        return "admin/assignment/form_ubah_assignment";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("assignmentDto", assignmentDto);
+                    return "admin/assignment/form_ubah_assignment";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/save_assignment",method = RequestMethod.POST)
@@ -50,10 +84,26 @@ public class Tb_assignmentController {
     }
 //    @ResponseBody
     @RequestMapping(value = "/view_assignment",method = RequestMethod.GET)
-    public String viewAssignment(Tb_assignmentDto assignmentDto,ModelMap map){
+    public String viewAssignment(Tb_assignmentDto assignmentDto,ModelMap map,HttpSession session, Tb_userDto userDto){
         List<Tb_assignmentDto> listDto = tb_assignmentService.getData();
-        map.addAttribute("listAssignment", listDto);
-        return "admin/assignment/view_assignment";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("listAssignment", listDto);
+                    return "admin/assignment/view_assignment";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
 //    @ResponseBody
     @RequestMapping(value = "/delete_assignment",method = RequestMethod.GET)

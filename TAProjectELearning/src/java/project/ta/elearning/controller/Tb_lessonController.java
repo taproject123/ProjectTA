@@ -6,6 +6,7 @@
 package project.ta.elearning.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import project.ta.elearning.dto.Tb_lessonDto;
+import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.service.Tb_lessonService;
 
 /**
@@ -25,16 +27,48 @@ public class Tb_lessonController {
     Tb_lessonService tb_lessonService;
     
     @RequestMapping(value = "/form_tambah_lesson",method = RequestMethod.GET)
-    public String formTambahLesson(ModelMap map,Tb_lessonDto lessonDto){
-        map.addAttribute("lessonDto", lessonDto);
-        return "admin/lesson/form_tambah_lesson";
+    public String formTambahLesson(ModelMap map,Tb_lessonDto lessonDto,HttpSession session, Tb_userDto userDto){
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("lessonDto", lessonDto);
+                    return "admin/lesson/form_tambah_lesson";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/form_ubah_lesson",method = RequestMethod.GET)
-    public String formUbahLesson(ModelMap map,Tb_lessonDto lessonDto,Integer id){
+    public String formUbahLesson(ModelMap map,Tb_lessonDto lessonDto,Integer id,HttpSession session, Tb_userDto userDto){
         lessonDto = tb_lessonService.getDataById(id);
-        map.addAttribute("lessonDto", lessonDto);
-        return "admin/lesson/form_ubah_lesson";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("lessonDto", lessonDto);
+                    return "admin/lesson/form_ubah_lesson";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/save_lesson",method = RequestMethod.POST)
@@ -50,10 +84,26 @@ public class Tb_lessonController {
     }
 //    @ResponseBody
     @RequestMapping(value = "/view_lesson",method = RequestMethod.GET)
-    public String viewLesson(Tb_lessonDto lessonDto,ModelMap map){
+    public String viewLesson(Tb_lessonDto lessonDto,ModelMap map,HttpSession session, Tb_userDto userDto){
         List<Tb_lessonDto> listDto = tb_lessonService.getData();
-        map.addAttribute("listLesson", listDto);
-        return "admin/lesson/view_lesson";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("listLesson", listDto);
+                    return "admin/lesson/view_lesson";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
 //    @ResponseBody
     @RequestMapping(value = "/delete_lesson",method = RequestMethod.GET)

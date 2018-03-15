@@ -35,9 +35,24 @@ public class Tb_userController {
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String form_tambah_user(Tb_userDto userDto, ModelMap map, HttpSession session, HttpServletRequest req) {
         List<Tb_roleDto> listRole = tb_roleService.getData();
-        map.addAttribute("userDto", userDto);
-        map.addAttribute("listRole", listRole);
-        return "user/form_tambah_user";            
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("userDto", userDto);
+                    map.addAttribute("listRole", listRole);
+                    return "user/form_tambah_user";
+                }
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+                    
     }
 
     @RequestMapping(value = "/save_user", method = RequestMethod.POST)
@@ -71,10 +86,25 @@ public class Tb_userController {
     }
     
     @RequestMapping(value = "/view_user",method = RequestMethod.GET)
-    public String viewUser(ModelMap map){
+    public String viewUser(ModelMap map,HttpSession session, Tb_userDto userDto){
         List<Tb_userDto> listUser = tb_userService.getData();
-        map.addAttribute("listUser", listUser);
-        return "user/view_user";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("listUser", listUser);
+                    return "user/view_user";
+                }
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/form_tambah_user",method = RequestMethod.GET)
@@ -84,12 +114,27 @@ public class Tb_userController {
     }
 //    @ResponseBody
     @RequestMapping(value = "/form_ubah_user",method = RequestMethod.GET)
-    public String formUbahUser(ModelMap map,Tb_userDto userDto,Integer id){
+    public String formUbahUser(ModelMap map,Integer id,HttpSession session, Tb_userDto userDto){
         userDto = tb_userService.getDataById(id);
         List<Tb_roleDto> listRole = tb_roleService.getData();
-        map.addAttribute("userDto", userDto);
-        map.addAttribute("listRole", listRole);
-        return "user/form_ubah_user";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("userDto", userDto);
+                    map.addAttribute("listRole", listRole);
+                    return "user/form_ubah_user";
+                }
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/update_user",method = RequestMethod.POST)

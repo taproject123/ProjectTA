@@ -40,6 +40,8 @@ public class LoginController {
                 return "mahasiswa/index";
             } else if(listUser.getId_role()==2){
                 return "dosen/index";
+            } else if(listUser.getId_role()==3){
+                return "admin/index";
             }
             return "index";
         } else {

@@ -71,6 +71,7 @@
                 <li><a href="view_lesson.htm"><i class="icon-th-large"></i><span>Lessons</span> </a> </li>
               </ul>
             </div>
+              <p><a href="logout.htm">Log Out</a></p>
             <!-- /container --> 
           </div>
           <!-- /subnavbar-inner --> 

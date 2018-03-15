@@ -6,12 +6,14 @@
 package project.ta.elearning.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import project.ta.elearning.dto.Tb_freeQuizDto;
+import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.service.Tb_freeQuizService;
 
 /**
@@ -24,16 +26,48 @@ public class Tb_freeQuizController {
     Tb_freeQuizService tb_freeQuizService;
     
     @RequestMapping(value = "/form_tambah_freeQuiz",method = RequestMethod.GET)
-    public String formTambahFreeQuiz(ModelMap map,Tb_freeQuizDto freeQuizDto){
-        map.addAttribute("freeQuizDto", freeQuizDto);
-        return "admin/freeQuiz/form_tambah_freeQuiz";
+    public String formTambahFreeQuiz(ModelMap map,Tb_freeQuizDto freeQuizDto,HttpSession session, Tb_userDto userDto){
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("freeQuizDto", freeQuizDto);
+                    return "admin/freeQuiz/form_tambah_freeQuiz";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/form_ubah_freeQuiz",method = RequestMethod.GET)
-    public String formUbahFreeQuiz(ModelMap map,Tb_freeQuizDto freeQuizDto,Integer id){
+    public String formUbahFreeQuiz(ModelMap map,Tb_freeQuizDto freeQuizDto,Integer id,HttpSession session, Tb_userDto userDto){
         freeQuizDto = tb_freeQuizService.getDataById(id);
-        map.addAttribute("freeQuizDto", freeQuizDto);
-        return "admin/freeQuiz/form_ubah_freeQuiz";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("freeQuizDto", freeQuizDto);
+                    return "admin/freeQuiz/form_ubah_freeQuiz";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/save_freeQuiz",method = RequestMethod.POST)
@@ -49,10 +83,26 @@ public class Tb_freeQuizController {
     }
     
     @RequestMapping(value = "/view_freeQuiz",method = RequestMethod.GET)
-    public String viewFreeQuiz(Tb_freeQuizDto freeQuizDto,ModelMap map){
+    public String viewFreeQuiz(Tb_freeQuizDto freeQuizDto,ModelMap map,HttpSession session, Tb_userDto userDto){
         List<Tb_freeQuizDto> listDto = tb_freeQuizService.getData();
-        map.addAttribute("listFreeQuiz", listDto);
-        return "admin/freeQuiz/view_freeQuiz";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("listFreeQuiz", listDto);
+                    return "admin/freeQuiz/view_freeQuiz";
+                }
+                
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     @RequestMapping(value = "/delete_freeQuiz",method = RequestMethod.GET)
     public String deleteFreeQuiz(Integer id){

@@ -6,11 +6,13 @@
 package project.ta.elearning.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.dto.Tb_weeklyQuizDto;
 import project.ta.elearning.service.Tb_weeklyQuizService;
 
@@ -24,16 +26,46 @@ public class Tb_weeklyQuizController {
     Tb_weeklyQuizService tb_weeklyQuizService;
     
     @RequestMapping(value = "/form_tambah_weeklyQuiz",method = RequestMethod.GET)
-    public String formTambahWeeklyQuiz(ModelMap map,Tb_weeklyQuizDto weeklyQuizDto){
-        map.addAttribute("weeklyQuizDto", weeklyQuizDto);
-        return "admin/weeklyQuiz/form_tambah_weeklyQuiz";
+    public String formTambahWeeklyQuiz(ModelMap map,Tb_weeklyQuizDto weeklyQuizDto,HttpSession session, Tb_userDto userDto){
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("weeklyQuizDto", weeklyQuizDto);
+                    return "admin/weeklyQuiz/form_tambah_weeklyQuiz";
+                }
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/form_ubah_weeklyQuiz",method = RequestMethod.GET)
-    public String formUbahWeeklyQuiz(ModelMap map,Tb_weeklyQuizDto weeklyQuizDto,Integer id){
+    public String formUbahWeeklyQuiz(ModelMap map,Tb_weeklyQuizDto weeklyQuizDto,Integer id,HttpSession session, Tb_userDto userDto){
         weeklyQuizDto = tb_weeklyQuizService.getDataById(id);
-        map.addAttribute("weeklyQuizDto", weeklyQuizDto);
-        return "admin/weeklyQuiz/form_ubah_weeklyQuiz";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("weeklyQuizDto", weeklyQuizDto);
+                    return "admin/weeklyQuiz/form_ubah_weeklyQuiz";
+                }
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     
     @RequestMapping(value = "/save_weeklyQuiz",method = RequestMethod.POST)
@@ -49,10 +81,25 @@ public class Tb_weeklyQuizController {
     }
     
     @RequestMapping(value = "/view_weeklyQuiz",method = RequestMethod.GET)
-    public String viewWeeklyQuiz(Tb_weeklyQuizDto weeklyQuizDto,ModelMap map){
+    public String viewWeeklyQuiz(Tb_weeklyQuizDto weeklyQuizDto,ModelMap map,HttpSession session, Tb_userDto userDto){
         List<Tb_weeklyQuizDto> listDto = tb_weeklyQuizService.getData();
-        map.addAttribute("listWeeklyQuiz", listDto);
-        return "admin/weeklyQuiz/view_weeklyQuiz";
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    map.addAttribute("listWeeklyQuiz", listDto);
+                    return "admin/weeklyQuiz/view_weeklyQuiz";
+                }
+            }
+        } catch (Exception e) {
+            return "login";
+        }
+        
     }
     @RequestMapping(value = "/delete_weeklyQuiz",method = RequestMethod.GET)
     public String deleteWeeklyQuiz(Integer id){

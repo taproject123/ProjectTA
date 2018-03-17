@@ -17,9 +17,33 @@ public class Tb_courseDto {
     private String shortname;
     private String idnumber;
     private String format;
-    private Integer startdate;
-    private Integer timecreated;
-    private Integer timemodified;
+    private String startdate;
+    private String timecreated;
+    private String timemodified;
+
+    public String getStartdate() {
+        return startdate;
+    }
+
+    public void setStartdate(String startdate) {
+        this.startdate = startdate;
+    }
+
+    public String getTimecreated() {
+        return timecreated;
+    }
+
+    public void setTimecreated(String timecreated) {
+        this.timecreated = timecreated;
+    }
+
+    public String getTimemodified() {
+        return timemodified;
+    }
+
+    public void setTimemodified(String timemodified) {
+        this.timemodified = timemodified;
+    }
 
     public Integer getId() {
         return id;
@@ -68,29 +92,4 @@ public class Tb_courseDto {
     public void setFormat(String format) {
         this.format = format;
     }
-
-    public Integer getStartdate() {
-        return startdate;
-    }
-
-    public void setStartdate(Integer startdate) {
-        this.startdate = startdate;
-    }
-
-    public Integer getTimecreated() {
-        return timecreated;
-    }
-
-    public void setTimecreated(Integer timecreated) {
-        this.timecreated = timecreated;
-    }
-
-    public Integer getTimemodified() {
-        return timemodified;
-    }
-
-    public void setTimemodified(Integer timemodified) {
-        this.timemodified = timemodified;
-    }
-
 }

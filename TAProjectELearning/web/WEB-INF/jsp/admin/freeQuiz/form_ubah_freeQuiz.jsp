@@ -13,13 +13,14 @@
         <title>Form Ubah Level</title>
     </head>
     <body>
-        <h1>Ubah Level</h1>
+        <h1>Ubah Free Quiz</h1>
         <form:form modelAttribute="freeQuizDto" method="POST" action="update_freeQuiz.htm">
             <form:input path="id" placeholder="ID FreeQuiz"/><br/>
             <form:input path="free_quiz" placeholder="Free Quiz"/><br/>
             <form:input path="answer" placeholder="Answer"/><br/>
             <form:input path="timeopen" placeholder="Time Open"/><br/>
             <form:input path="timeclose" placeholder="Time Close"/><br/>
+            <form:hidden path="timecreated" />
             <form:input path="timelimit" placeholder="Time Limit"/><br/>
             <form:input path="id_course" placeholder="Id Course"/><br/>
             <form:input path="id_materi" placeholder="Id Materi"/><br/>

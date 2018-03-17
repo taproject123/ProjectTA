@@ -114,7 +114,12 @@ public class Tb_courseController {
     
     @RequestMapping(value = "/update_course",method = RequestMethod.POST)
     public String ubahCourse(Tb_courseDto courseDto){
-        tb_courseService.updateData(courseDto);
+        try {
+            tb_courseService.updateData(courseDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
         return "redirect:view_course.htm";
     }
 //    @ResponseBody

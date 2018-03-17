@@ -15,15 +15,12 @@
     <body>
         <h1>Form Tambah Course</h1>
         <form:form modelAttribute="courseDto" method="POST" action="save_course.htm">
-            <form:input path="id" placeholder="ID Course"/><br/>
             <form:input path="category" placeholder="category"/><br/>
             <form:input path="fullname" placeholder="fullname"/><br/>
             <form:input path="shortname" placeholder="shortname"/><br/>
             <form:input path="idnumber" placeholder="idnumber"/><br/>
             <form:input path="format" placeholder="format"/><br/>
             <form:input path="startdate" placeholder="startdate"/><br/>
-            <form:input path="timecreated" placeholder="timecreated"/><br/>
-            <form:input path="timemodified" placeholder="timemodified"/><br/>
             <input type="submit" value="Submit"/>
         </form:form>
 </body>

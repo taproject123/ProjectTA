@@ -5,7 +5,10 @@
  */
 package project.ta.elearning.service.impl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +32,9 @@ public class Tb_courseServiceImpl implements Tb_courseService {
     @Override
     public void saveData(Tb_courseDto courseDto) {
         try {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
+            String currDate = dateFormat.format(date);
             Tb_courseModel courseModel = new Tb_courseModel();
             courseModel.setId(courseDto.getId());
             courseModel.setCategory(courseDto.getCategory());
@@ -37,8 +43,8 @@ public class Tb_courseServiceImpl implements Tb_courseService {
             courseModel.setIdnumber(courseDto.getIdnumber());
             courseModel.setFormat(courseDto.getFormat());
             courseModel.setStartdate(courseDto.getStartdate());
-            courseModel.setTimecreated(courseDto.getTimecreated());
-            courseModel.setTimemodified(courseDto.getTimemodified());
+            courseModel.setTimecreated(currDate);
+            courseModel.setTimemodified(currDate);
             tb_courseDao.saveData(courseModel);
         } catch (Exception e) {
             System.out.println(e);
@@ -79,17 +85,24 @@ public class Tb_courseServiceImpl implements Tb_courseService {
 
     @Override
     public void updateData(Tb_courseDto courseDto) {
-        Tb_courseModel courseModel = new Tb_courseModel();
-        courseModel.setId(courseDto.getId());
-        courseModel.setCategory(courseDto.getCategory());
-        courseModel.setFullname(courseDto.getFullname());
-        courseModel.setShortname(courseDto.getShortname());
-        courseModel.setIdnumber(courseDto.getIdnumber());
-        courseModel.setFormat(courseDto.getFormat());
-        courseModel.setStartdate(courseDto.getStartdate());
-        courseModel.setTimecreated(courseDto.getTimecreated());
-        courseModel.setTimemodified(courseDto.getTimemodified());
-        tb_courseDao.updateData(courseModel);
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
+            String currDate = dateFormat.format(date);
+            Tb_courseModel courseModel = new Tb_courseModel();
+            courseModel.setId(courseDto.getId());
+            courseModel.setCategory(courseDto.getCategory());
+            courseModel.setFullname(courseDto.getFullname());
+            courseModel.setShortname(courseDto.getShortname());
+            courseModel.setIdnumber(courseDto.getIdnumber());
+            courseModel.setFormat(courseDto.getFormat());
+            courseModel.setStartdate(courseDto.getStartdate());
+            courseModel.setTimecreated(courseDto.getTimecreated());
+            courseModel.setTimemodified(currDate);
+            tb_courseDao.updateData(courseModel);
+        } catch (Exception e) {
+        }
+
     }
 
     @Override

@@ -93,6 +93,8 @@
                     <th>Time Open</th>
                     <th>Time Close</th>
                     <th>Time Limit</th>
+                    <th>Time Created</th>
+                    <th>Time Modified</th>
                     <th>ID Course</th>
                     <th>ID Materi</th>
                     <th>ID Level</th>
@@ -114,6 +116,8 @@
                             <td>${data.timeopen}</td>
                             <td>${data.timeclose}</td>
                             <td>${data.timelimit}</td>
+                            <td>${data.timecreated}</td>
+                            <td>${data.timemodified}</td>
                             <td>${data.id_course}</td>
                             <td>${data.id_materi}</td>
                             <td>${data.id_level}</td>

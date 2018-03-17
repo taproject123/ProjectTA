@@ -5,7 +5,10 @@
  */
 package project.ta.elearning.service.impl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,17 +24,18 @@ import project.ta.elearning.service.Tb_freeQuizService;
  */
 @Transactional
 @Service
-public class Tb_freeQuizServiceImpl implements Tb_freeQuizService{
-
+public class Tb_freeQuizServiceImpl implements Tb_freeQuizService {
+    
+    
     @Autowired
     Tb_freeQuizDao tb_freeQuizDao;
-    
+
     @Override
     public List<Tb_freeQuizDto> getData() {
         Tb_freeQuizDto dto = new Tb_freeQuizDto();
         List<Tb_freeQuizDto> listData = new ArrayList<>();
         List<Tb_freeQuizModel> listModel = tb_freeQuizDao.getData();
-        if(listModel.size()>0){
+        if (listModel.size() > 0) {
             for (Tb_freeQuizModel model : listModel) {
                 dto = new Tb_freeQuizDto();
                 dto.setId(model.getId());
@@ -55,15 +59,17 @@ public class Tb_freeQuizServiceImpl implements Tb_freeQuizService{
     public void saveData(Tb_freeQuizDto dto) {
         Tb_freeQuizModel model = new Tb_freeQuizModel();
         try {
-            model.setId(dto.getId());
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
+            String currDate = dateFormat.format(date);
             model.setId(dto.getId());
             model.setFree_quiz(dto.getFree_quiz());
             model.setAnswer(dto.getAnswer());
             model.setTimeopen(dto.getTimeopen());
             model.setTimeclose(dto.getTimeclose());
             model.setTimelimit(dto.getTimelimit());
-            model.setTimecreated(dto.getTimecreated());
-            model.setTimemodified(dto.getTimemodified());
+            model.setTimecreated(currDate);
+            model.setTimemodified(currDate);
             model.setId_course(dto.getId_course());
             model.setId_materi(dto.getId_materi());
             model.setId_level(dto.getId_level());
@@ -71,19 +77,22 @@ public class Tb_freeQuizServiceImpl implements Tb_freeQuizService{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
     @Override
     public void deleteData(Integer id) {
         try {
             tb_freeQuizDao.deleteData(id);
-        } catch (Exception e) {   
+        } catch (Exception e) {
         }
     }
 
     @Override
     public void updateData(Tb_freeQuizDto dto) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        String currDate = dateFormat.format(date);
         Tb_freeQuizModel model = new Tb_freeQuizModel();
         try {
             model.setId(dto.getId());
@@ -93,7 +102,7 @@ public class Tb_freeQuizServiceImpl implements Tb_freeQuizService{
             model.setTimeclose(dto.getTimeclose());
             model.setTimelimit(dto.getTimelimit());
             model.setTimecreated(dto.getTimecreated());
-            model.setTimemodified(dto.getTimemodified());
+            model.setTimemodified(currDate);
             model.setId_course(dto.getId_course());
             model.setId_materi(dto.getId_materi());
             model.setId_level(dto.getId_level());
@@ -107,7 +116,7 @@ public class Tb_freeQuizServiceImpl implements Tb_freeQuizService{
     public Tb_freeQuizDto getDataById(Integer id) {
         Tb_freeQuizDto dto = new Tb_freeQuizDto();
         List<Tb_freeQuizModel> listModel = tb_freeQuizDao.getDataById(id);
-        if(listModel.size()>0){
+        if (listModel.size() > 0) {
             for (Tb_freeQuizModel model : listModel) {
                 dto = new Tb_freeQuizDto();
                 dto.setId(model.getId());

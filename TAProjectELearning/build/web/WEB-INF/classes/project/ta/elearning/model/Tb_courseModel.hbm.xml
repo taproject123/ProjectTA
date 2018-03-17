@@ -10,8 +10,8 @@
     <property length="255" name="shortname" type="string"/>
     <property length="100" name="idnumber" type="string"/>
     <property length="21" name="format" type="string"/>
-    <property length="10" name="startdate" type="integer"/>
-    <property length="10" name="timecreated" type="integer"/>
-    <property length="10" name="timemodified" type="integer"/>
+    <property length="100" name="startdate" type="string"/>
+    <property length="100" name="timecreated" type="string"/>
+    <property length="100" name="timemodified" type="string"/>
   </class>
 </hibernate-mapping>

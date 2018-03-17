@@ -20,5 +20,6 @@
     <mapping resource="project/ta/elearning/model/Tb_nilaiModel.hbm.xml"/>
     <mapping resource="project/ta/elearning/model/Tb_materiSyaratModel.hbm.xml"/>
     <mapping resource="project/ta/elearning/model/Tb_fileModel.hbm.xml"/>
+    <mapping resource="project/ta/elearning/model/Tb_sessionModel.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

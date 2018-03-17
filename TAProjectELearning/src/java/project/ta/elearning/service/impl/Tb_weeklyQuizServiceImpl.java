@@ -5,7 +5,10 @@
  */
 package project.ta.elearning.service.impl;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,17 +24,17 @@ import project.ta.elearning.service.Tb_weeklyQuizService;
  */
 @Transactional
 @Service
-public class Tb_weklyQuizServiceImpl implements Tb_weeklyQuizService{
+public class Tb_weeklyQuizServiceImpl implements Tb_weeklyQuizService {
 
     @Autowired
     Tb_weeklyQuizDao tb_weeklyQuizDao;
-    
+
     @Override
     public List<Tb_weeklyQuizDto> getData() {
         Tb_weeklyQuizDto dto = new Tb_weeklyQuizDto();
         List<Tb_weeklyQuizDto> listData = new ArrayList<>();
         List<Tb_weeklyQuizModel> listModel = tb_weeklyQuizDao.getData();
-        if(listModel.size()>0){
+        if (listModel.size() > 0) {
             for (Tb_weeklyQuizModel model : listModel) {
                 dto = new Tb_weeklyQuizDto();
                 dto.setId(model.getId());
@@ -54,29 +57,31 @@ public class Tb_weklyQuizServiceImpl implements Tb_weeklyQuizService{
     public void saveData(Tb_weeklyQuizDto dto) {
         Tb_weeklyQuizModel model = new Tb_weeklyQuizModel();
         try {
-            model.setId(dto.getId());
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
+            String currDate = dateFormat.format(date);
             model.setId(dto.getId());
             model.setWeekly_quiz(dto.getWeekly_quiz());
             model.setAnswer(dto.getAnswer());
             model.setTimeopen(dto.getTimeopen());
             model.setTimeclose(dto.getTimeclose());
             model.setTimelimit(dto.getTimelimit());
-            model.setTimecreated(dto.getTimecreated());
-            model.setTimemodified(dto.getTimemodified());
+            model.setTimecreated(currDate);
+            model.setTimemodified(currDate);
             model.setId_course(dto.getId_course());
             model.setId_materi(dto.getId_materi());
             tb_weeklyQuizDao.saveData(model);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
     @Override
     public void deleteData(Integer id) {
         try {
             tb_weeklyQuizDao.deleteData(id);
-        } catch (Exception e) {   
+        } catch (Exception e) {
         }
     }
 
@@ -84,6 +89,9 @@ public class Tb_weklyQuizServiceImpl implements Tb_weeklyQuizService{
     public void updateData(Tb_weeklyQuizDto dto) {
         Tb_weeklyQuizModel model = new Tb_weeklyQuizModel();
         try {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
+            String currDate = dateFormat.format(date);
             model.setId(dto.getId());
             model.setWeekly_quiz(dto.getWeekly_quiz());
             model.setAnswer(dto.getAnswer());
@@ -91,7 +99,7 @@ public class Tb_weklyQuizServiceImpl implements Tb_weeklyQuizService{
             model.setTimeclose(dto.getTimeclose());
             model.setTimelimit(dto.getTimelimit());
             model.setTimecreated(dto.getTimecreated());
-            model.setTimemodified(dto.getTimemodified());
+            model.setTimemodified(currDate);
             model.setId_course(dto.getId_course());
             model.setId_materi(dto.getId_materi());
             tb_weeklyQuizDao.updateData(model);
@@ -104,7 +112,7 @@ public class Tb_weklyQuizServiceImpl implements Tb_weeklyQuizService{
     public Tb_weeklyQuizDto getDataById(Integer id) {
         Tb_weeklyQuizDto dto = new Tb_weeklyQuizDto();
         List<Tb_weeklyQuizModel> listModel = tb_weeklyQuizDao.getDataById(id);
-        if(listModel.size()>0){
+        if (listModel.size() > 0) {
             for (Tb_weeklyQuizModel model : listModel) {
                 dto = new Tb_weeklyQuizDto();
                 dto.setId(model.getId());

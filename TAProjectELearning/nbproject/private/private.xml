@@ -4,13 +4,52 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/index.jsp</file>
-            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/redirect.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/weeklyQuiz/view_weeklyQuiz.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_weeklyQuizDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/impl/Tb_freeQuizDaoImpl.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_sessionModel.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/hibernate.cfg.xml</file>
             <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_roleController.java</file>
             <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_userController.java</file>
-            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/level/view_level.jsp</file>
-            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/LogOutController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/course/view_course.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/Tb_courseService.java</file>
             <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_levelController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_freeQuizDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_lessonServiceImpl.java</file>
             <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/LoginController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_courseModel.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/freeQuiz/view_freeQuiz.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/course/form_ubah_course.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_valueDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_assignmentController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_courseDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dao/Tb_courseDao.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_assignmentDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_lessonController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_freeQuizServiceImpl.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_majorsController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/level/view_level.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/weeklyQuiz/form_ubah_weeklyQuiz.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/course/form_tambah_course.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/freeQuiz/form_tambah_freeQuiz.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_valueController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_lessonDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_courseModel.hbm.xml</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_assignmentServiceImpl.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_userDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_levelDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_roleDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_courseController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/Tb_weeklyQuizController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_weeklyQuizServiceImpl.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/redirect.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/dto/Tb_majorsDto.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/freeQuiz/form_ubah_freeQuiz.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/web/WEB-INF/jsp/admin/weeklyQuiz/form_tambah_weeklyQuiz.jsp</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/controller/LogOutController.java</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/model/Tb_sessionModel.hbm.xml</file>
+            <file>file:/E:/TAProject/Clone%20Baru%2014-03-2018/ProjectTA/TAProjectELearning/src/java/project/ta/elearning/service/impl/Tb_courseServiceImpl.java</file>
         </group>
     </open-files>
 </project-private>

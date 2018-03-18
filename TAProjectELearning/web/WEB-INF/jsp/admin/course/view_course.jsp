@@ -36,10 +36,10 @@
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                        class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
+                                        class="icon-user"></i> ${nama} <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="javascript:;">Profile</a></li>
-                                    <li><a href="javascript:;">Logout</a></li>
+                                    <li><a href="logout.htm">Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -73,7 +73,7 @@
                 <!-- /container --> 
             </div>
             <!-- /subnavbar-inner --> 
-            
+
         </div>
         <!-- /subnavbar -->
         <p><a href="form_tambah_course.htm">Tambah Course</a></p>
@@ -125,5 +125,12 @@
             </div>
             <!-- /widget-content --> 
         </div>
+
+        <!--javascript-->
+        <script src="<c:url value="resources/js/jquery-1.7.2.min.js"/>"></script> 
+        <script src="<c:url value="resources/js/excanvas.min.js"/>"></script> 
+        <script src="<c:url value="resources/js/chart.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="resources/js/bootstrap.js"/>"></script>
+        <script language="javascript" type="text/javascript" src="<c:url value="resources/js/full-calendar/fullcalendar.min.js"/>"></script>
     </body>
 </html>

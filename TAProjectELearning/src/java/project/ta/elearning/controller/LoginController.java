@@ -22,7 +22,7 @@ import project.ta.elearning.service.UserService;
  *
  * @author Sou
  */
-@SessionAttributes({"username", "password","firstname","lastname","role"})
+@SessionAttributes({"username", "password","firstname","lastname","role","nama"})
 @Controller
 public class LoginController {
     @Autowired
@@ -33,6 +33,8 @@ public class LoginController {
         Tb_userDto listUser = tb_userService.selectUser(username, password);
         
         if(data > 0) {
+            String nama = listUser.getFirstname() + " " + listUser.getLastname();
+            modelMap.addAttribute("nama", nama);
             modelMap.addAttribute("username", username);
             modelMap.addAttribute("password", password);
             modelMap.addAttribute("role", listUser.getId_role());

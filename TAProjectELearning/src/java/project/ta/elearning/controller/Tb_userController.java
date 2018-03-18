@@ -37,18 +37,18 @@ public class Tb_userController {
         List<Tb_roleDto> listRole = tb_roleService.getData();
         map.addAttribute("loginDto", userDto);
         try {
-            if (session.getAttribute("username") == null) {
-                return "login";
-            } else {
-                int role = Integer.parseInt(session.getAttribute("role").toString());
-                if (role != 3) {
-                    return "login";
-                } else {
+//            if (session.getAttribute("username") == null) {
+//                return "login";
+//            } else {
+//                int role = Integer.parseInt(session.getAttribute("role").toString());
+//                if (role != 3) {
+//                    return "login";
+//                } else {
                     map.addAttribute("userDto", userDto);
                     map.addAttribute("listRole", listRole);
                     return "user/form_tambah_user";
-                }
-            }
+//                }
+//            }
         } catch (Exception e) {
             return "login";
         }

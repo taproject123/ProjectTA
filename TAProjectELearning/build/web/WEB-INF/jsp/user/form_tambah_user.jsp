@@ -23,9 +23,9 @@
     </head>
     <body>
         <form:form modelAttribute="userDto" name="form_user" method="POST" action="save_user.htm">
-	<div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
                         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -45,18 +45,18 @@
                                 </li>
                             </ul>
                         </div><!--/.nav-collapse -->	
-                </div> <!-- /container -->
-            </div> <!-- /navbar-inner -->
-        </div> <!-- /navbar -->
-<!--        <p>User Sekarang adalah ${username} dengan password ${password} / silahkan log out untuk menghapus session ini</p>-->
-        <div class="account-container register">
-	<div class="content clearfix">
-            <form action="#" method="post">
-		<h1>Signup for Free Account</h1>
-                    <div class="login-fields">
-			<p>Create your free account:</p>
-                        
-                        
+                    </div> <!-- /container -->
+                </div> <!-- /navbar-inner -->
+            </div> <!-- /navbar -->
+    <!--        <p>User Sekarang adalah ${username} dengan password ${password} / silahkan log out untuk menghapus session ini</p>-->
+            <div class="account-container register">
+                <div class="content clearfix">
+                    <form action="#" method="post">
+                        <h1>Signup for Free Account</h1>
+                        <div class="login-fields">
+                            <p>Create your free account:</p>
+
+
                             <div class="field1">
                                 <form:input path="id" placeholder="id" class="login" style="height:40px;"/><br/>
                             </div> <!-- /field -->
@@ -152,13 +152,19 @@
                                     </c:forEach>
                                 </form:select>
                             </div> <!-- /field -->
-                        
+
                             <input type="submit" value="Simpan"/>
-                        
-                    </div> <!-- .actions -->
-		</form>
-            </div> <!-- /content -->
-        </div> <!-- /account-container -->
+
+                        </div> <!-- .actions -->
+                    </form>
+                </div> <!-- /content -->
+            </div> <!-- /account-container -->
         </form:form>
+
+        <script src="<c:url value="resources/js/jquery-1.7.2.min.js"/>"></script> 
+        <script src="<c:url value="resources/js/excanvas.min.js"/>"></script> 
+        <script src="<c:url value="resources/js/chart.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="resources/js/bootstrap.js"/>"></script>
+        <script language="javascript" type="text/javascript" src="<c:url value="resources/js/full-calendar/fullcalendar.min.js"/>"></script>
     </body>
 </html>

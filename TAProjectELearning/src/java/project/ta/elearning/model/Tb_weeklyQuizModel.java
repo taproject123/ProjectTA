@@ -12,7 +12,7 @@ package project.ta.elearning.model;
 public class Tb_weeklyQuizModel {
     private Integer id;
     private String weekly_quiz;
-    private String jawaban;
+    private String answer;
     private String timeopen;
     private String timeclose;
     private String timelimit;
@@ -37,12 +37,12 @@ public class Tb_weeklyQuizModel {
         this.weekly_quiz = weekly_quiz;
     }
 
-    public String getJawaban() {
-        return jawaban;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setJawaban(String jawaban) {
-        this.jawaban = jawaban;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
     public String getTimeopen() {

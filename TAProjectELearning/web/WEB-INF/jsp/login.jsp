@@ -30,11 +30,11 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="index.html">Good Learner</a>
+                        <a class="brand" href="index.htm">Good Learner</a>
                         <div class="nav-collapse">
                             <ul class="nav pull-right">
                                 <li class="">						
-                                    <a href="signup.html" class="">Tidak mempunyai akun?</a>
+                                    <a href="signup.htm" class="">Tidak mempunyai akun?</a>
                                 </li>
                                 <li class="">						
                                     <a href="index.html" class="">
@@ -54,12 +54,12 @@
                                 <p>Isi form berikut</p>
                                 <div class="field">
                                     <label for="username">Username</label>
-                                    <form:input class="login username-field" path="username"/>
+                                    <form:input class="login username-field" path="username" style="height:40px;"/>
                                 </div> <!-- /field -->
 
                                 <div class="field">
                                     <label for="password">Password:</label>
-                                    <form:input path="password" class="login password-field"/>
+                                    <form:input path="password" class="login password-field" style="height:40px;"/>
                                 </div> <!-- /password -->
                             </div> <!-- /login-fields -->
                             <div class="login-actions">

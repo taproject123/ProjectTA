@@ -12,7 +12,7 @@ package project.ta.elearning.model;
 public class Tb_freeQuizModel {
     private Integer id;
     private String free_quiz;
-    private String jawaban;
+    private String answer;
     private String timeopen;
     private String timeclose;
     private String timelimit;
@@ -38,12 +38,12 @@ public class Tb_freeQuizModel {
         this.free_quiz = free_quiz;
     }
 
-    public String getJawaban() {
-        return jawaban;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setJawaban(String jawaban) {
-        this.jawaban = jawaban;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
     public String getTimeopen() {

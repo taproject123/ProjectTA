@@ -10,43 +10,26 @@ package project.ta.elearning.model;
  * @author Sou
  */
 public class Tb_userModel {
-    private Integer id ;
+    private Integer id;
     private String username;
     private String password;
     private String firstname;
     private String lastname;
     private String email;
-    private String skype;
-    private String yahoo;
     private String phone1;
-    private String phone2;
     private String institution;
     private String department;
     private String address;
     private String city;
-    private String country;
-    private String timezone;
-    private Integer firstaccess;
-    private Integer lastaccess;
-    private Integer lastlogin;
-    private Integer currentlogin;
-    private Integer picture;
+    private String firstaccess;
+    private String lastaccess;
+    private String lastlogin;
+    private String currentlogin;
+    private String picture;
     private String description;
-    private Integer timecreated;
-    private Integer timemodified;
-    private String imagealt;
-    private String lastnamephonetic;
-    private String firstnamephonetic;
-    private String middlename;
-    private String alternatename;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String timecreated;
+    private String timemodified;
+    private Integer id_role;
 
     public String getUsername() {
         return username;
@@ -68,6 +51,14 @@ public class Tb_userModel {
         return firstname;
     }
 
+    
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -88,36 +79,12 @@ public class Tb_userModel {
         this.email = email;
     }
 
-    public String getSkype() {
-        return skype;
-    }
-
-    public void setSkype(String skype) {
-        this.skype = skype;
-    }
-
-    public String getYahoo() {
-        return yahoo;
-    }
-
-    public void setYahoo(String yahoo) {
-        this.yahoo = yahoo;
-    }
-
     public String getPhone1() {
         return phone1;
     }
 
     public void setPhone1(String phone1) {
         this.phone1 = phone1;
-    }
-
-    public String getPhone2() {
-        return phone2;
-    }
-
-    public void setPhone2(String phone2) {
-        this.phone2 = phone2;
     }
 
     public String getInstitution() {
@@ -152,59 +119,43 @@ public class Tb_userModel {
         this.city = city;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getTimezone() {
-        return timezone;
-    }
-
-    public void setTimezone(String timezone) {
-        this.timezone = timezone;
-    }
-
-    public Integer getFirstaccess() {
+    public String getFirstaccess() {
         return firstaccess;
     }
 
-    public void setFirstaccess(Integer firstaccess) {
+    public void setFirstaccess(String firstaccess) {
         this.firstaccess = firstaccess;
     }
 
-    public Integer getLastaccess() {
+    public String getLastaccess() {
         return lastaccess;
     }
 
-    public void setLastaccess(Integer lastaccess) {
+    public void setLastaccess(String lastaccess) {
         this.lastaccess = lastaccess;
     }
 
-    public Integer getLastlogin() {
+    public String getLastlogin() {
         return lastlogin;
     }
 
-    public void setLastlogin(Integer lastlogin) {
+    public void setLastlogin(String lastlogin) {
         this.lastlogin = lastlogin;
     }
 
-    public Integer getCurrentlogin() {
+    public String getCurrentlogin() {
         return currentlogin;
     }
 
-    public void setCurrentlogin(Integer currentlogin) {
+    public void setCurrentlogin(String currentlogin) {
         this.currentlogin = currentlogin;
     }
 
-    public Integer getPicture() {
+    public String getPicture() {
         return picture;
     }
 
-    public void setPicture(Integer picture) {
+    public void setPicture(String picture) {
         this.picture = picture;
     }
 
@@ -216,60 +167,28 @@ public class Tb_userModel {
         this.description = description;
     }
 
-    public Integer getTimecreated() {
+    public String getTimecreated() {
         return timecreated;
     }
 
-    public void setTimecreated(Integer timecreated) {
+    public void setTimecreated(String timecreated) {
         this.timecreated = timecreated;
     }
 
-    public Integer getTimemodified() {
+    public String getTimemodified() {
         return timemodified;
     }
 
-    public void setTimemodified(Integer timemodified) {
+    public void setTimemodified(String timemodified) {
         this.timemodified = timemodified;
     }
 
-    public String getImagealt() {
-        return imagealt;
+    public Integer getId_role() {
+        return id_role;
     }
 
-    public void setImagealt(String imagealt) {
-        this.imagealt = imagealt;
-    }
-
-    public String getLastnamephonetic() {
-        return lastnamephonetic;
-    }
-
-    public void setLastnamephonetic(String lastnamephonetic) {
-        this.lastnamephonetic = lastnamephonetic;
-    }
-
-    public String getFirstnamephonetic() {
-        return firstnamephonetic;
-    }
-
-    public void setFirstnamephonetic(String firstnamephonetic) {
-        this.firstnamephonetic = firstnamephonetic;
-    }
-
-    public String getMiddlename() {
-        return middlename;
-    }
-
-    public void setMiddlename(String middlename) {
-        this.middlename = middlename;
-    }
-
-    public String getAlternatename() {
-        return alternatename;
-    }
-
-    public void setAlternatename(String alternatename) {
-        this.alternatename = alternatename;
+    public void setId_role(Integer id_role) {
+        this.id_role = id_role;
     }
     
 }

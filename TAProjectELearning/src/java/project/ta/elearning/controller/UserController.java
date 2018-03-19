@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import project.ta.elearning.dto.Tb_userDto;
 import project.ta.elearning.dto.UserDto;
 import project.ta.elearning.service.UserService;
 
@@ -24,20 +25,24 @@ public class UserController {
     
     @Autowired
     UserService  userService;
-    
-    @RequestMapping(value = "/view_user" , method =  RequestMethod.GET)
-    public String viewUser(UserDto userDto,ModelMap modelMap){
-        List<UserDto> listUser = userService.getUser();
-        modelMap.addAttribute("listUser",listUser);
-        return "UserView/view_user";
-    }
-    
-    @RequestMapping(value = "/login" , method =  RequestMethod.GET)
-    public String viewLogin(HttpSession session,ModelMap modelMap,UserDto  userDto ){
-            modelMap.addAttribute("loginDto", userDto);
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String viewAdmin(ModelMap map,HttpSession session, Tb_userDto userDto){
+        map.addAttribute("loginDto", userDto);
+        try {
+            if (session.getAttribute("username") == null) {
+                return "login";
+            } else {
+                int role = Integer.parseInt(session.getAttribute("role").toString());
+                if (role != 3) {
+                    return "login";
+                } else {
+                    return "linkAdmin";
+                }
+                
+            }
+        } catch (Exception e) {
             return "login";
-     
+        }
+        
     }
-    
-    
 }
